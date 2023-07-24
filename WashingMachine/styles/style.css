@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+:root{
+    --washingMachineColor: rgb(247, 250, 253);
+}
+
+.main{
+    width: 100%;
+    height: 1200px;
+    padding: 50px;
+    background-color: aliceblue;
+}
+
+.container{
+    width: 900px;
+    height: 900px;
+    background-color: rgb(228, 190, 233);
+    margin: auto;
+    padding: 50px;
+}
+
+.washingMachine{
+    width: 400px;
+    height: 600px;
+    background-color: var(--washingMachineColor);
+    margin: auto;
+    border-radius: 8px 8px 4px 4px;
+    border: 2px solid rgb(169, 169, 169);
+    box-shadow: 0px 0px 8px -1px rgba(34, 60, 80, 0.2);
+}
+.washingMachine--turn_on{
+    animation: 0.1s linear vibro infinite;
+}
+.washingMachine_panel{
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgb(94, 94, 94);
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 13px 8px -11px rgba(34, 60, 80, 0.2);
+    padding: 10px 5px 10px 5px;
+}
+.washingMachine_panel_powder{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    border: 2px solid grey;
+    border-radius: 2px 2px 6px 6px;
+}
+.washingMachine_panel_buttonStart{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    border: 2px solid grey;
+    box-shadow: 5px 13px 8px -15px rgba(34, 60, 80, 0.2);
+    cursor: pointer;
+    margin-left: 95px;
+}
+
+.washingMachine_panel_display{
+    width: 80px;
+    height: 35px;
+    background-color: rgb(27, 27, 27);
+    float: right;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.display_text{
+    font-size: 14px;
+    align-self: center;
+    animation: 1s linear display_text infinite;
+}
+.display_text--start::after{
+    content: 'Washing';
+    color: orange;
+}
+.display_text--ready::after{
+    content: 'Ready';
+    color: lime;
+}
+.washingMachine_panel_display:hover .display_text::after{
+    content: ':)';
+    color: lime;
+}
+
+.washingMachine_hatch{
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(187, 187, 187);
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 0px -1px 4px 2px rgba(30, 30, 30, 0.9);
+}
+
+.washingMachine_hatch_window{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid rgb(139, 139, 139);
+    background: rgba(96, 96, 96, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 26px 29px rgba(2, 2, 2, 0.23) inset;
+    backdrop-filter: blur(1px);
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+.washingMachine_hatch_box{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-top: -150px;
+    border-radius: 50%;
+    transform: rotateX(10deg);
+    position: relative;
+    background: center/contain url("../img/glass.png");
+    z-index: 1;
+}
+.washingMachine_hatch--turn_on{
+    animation: rotate 0.2s linear infinite;
+}
+
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes display_text {
+    0%{
+      opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes vibro {
+    0%{
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+  }
